@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col md-12">
+        <h2>Liste des apprenants <button-type="button" class="btn btn-success pull-right" data-toggle="modal"
+                data-target="#mymodal">
+                Ajouter un apprenant</button-type>
+        </h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Matricule</th>
+                <th>Adresse</th>
+                <th>Promo</th>
+                <th>Action</th>
+
+
+            </tr>
+            <tr>
+                <td>NGOM</td>
+                <td>Elémine</td>
+                <td>31/12/1992</td>
+                <td>nveezy01@gmail.com</td>
+                <td>770089600</td>
+                <td>SA-00235</td>
+                <td>Djolof</td>
+                <td>Rose KOUNTZ</td>
+                <td>
+                    <a href="" class="btn btn-danger btn-xs"
+                    onclick="return confirm('Voulez-vous vraiment suspendre votre inscription')">Suspendre</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

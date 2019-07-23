@@ -1,0 +1,127 @@
+{% extends 'home.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col md-12">
+        <h2>Liste des apprenants <button-type="button" class="btn btn-success pull-right" data-toggle="modal"
+                data-target="#mymodal">
+                Ajouter un apprenant</button-type>
+        </h2>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+
+        <div class="alert alert-success alert-dismissable" role="alert">
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+
+                <span aria-hidden="true">x</span>
+
+            </button>
+
+            {{message}}
+
+
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <table class="table table-striped">
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Promo</th>
+
+            </tr>
+            {% for row in app %}
+            <tr>
+                <td>{{row.0}}</td>
+                <td>{{row.1}}</td>
+                <td>{{row.2}}</td>
+                <td>{{row.3}}</td>
+                <td>{{row.4}}</td>
+                <td>{{row.5}}</td>
+                <td>{{row.6}}</td>
+
+
+            </tr>
+
+
+
+
+    </div>
+
+    <div id="mymodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Remplissez le formulaire</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url_for('inscription') }}" method="POST">
+                        <div class="form-group">
+                            <label>Nom:</label>
+                            <input type="text" class="form-control" name="nom" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Prenom:</label>
+                            <input type="text" class="form-control" name="prenom" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Date de Naissance:</label>
+                            <input type="date" class="form-control" name="date_naiss" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="text" class="form-control" name="email" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Téléphone:</label>
+                            <input type="tel" class="form-control" name="telephone" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Adresse:</label>
+                            <input type="text" class="form-control" name="adresse" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Promo:</label>
+                            <select required class="form-control" name="promo">
+                                {% for promo in pro %}
+                                <option value="{{promo.0}}">{{promo.1}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Inscrire</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

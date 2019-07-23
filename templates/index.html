@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+{% block body %}
+<div class="sidebar">
+	<style>
+		.sidebar {
+			display: inline-block;
+		}
+
+		section {
+			display: inline-block;
+		}
+
+		li {
+			display: block;
+			transition-duration: 0.5s;
+		}
+
+		li:hover {
+			cursor: pointer;
+		}
+
+		ul li ul {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			transition: all 0.5s ease;
+			margin-top: 1rem;
+			left: 0;
+			display: none;
+		}
+
+		ul li:hover>ul,
+		ul li ul:hover {
+			visibility: visible;
+			opacity: 1;
+			display: block;
+		}
+
+		ul li ul li {
+			clear: both;
+		}
+	</style>
+	<ul>
+		<li>
+			<a href="#">Scolarité</a>
+			<ul class="dropdown">
+				<li><a href="/ajout_app">Inscription</a></li>
+				<li><a href="/modifier">Modifier</a></li>
+				<li><a href="/Scolarité/annuler">Suspendre</a></li>
+				<li><a href="/Scolarité/suspendre">Annuler</a></li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">Référentiel</a>
+			<ul class="dropdown">
+				<li><a href="/ajout_ref">Nouveau</a></li>
+				<li><a href="/modifier_ref">Modifier</a></li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">Promo</a>
+			<ul class="dropdown">
+				<li><a href="/ajout_promo">Nouveau</a></li>
+				<li><a href="/modif_promo">Modifier</a></li>
+				<li><a href="#">Liste</a></li>
+			</ul>
+		</li>
+
+	</ul>
+</div>
+
+<section class="text-center">
+
+</section>
+
+{% endblock body %}

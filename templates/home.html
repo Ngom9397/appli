@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+	<title>SA Application1</title>
+	<link href="/home/ngom/Bureau/Code/FlaskApps/site/static/css/bootstrap.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="well text-center">
+
+				<h1>L'école Première</h1>
+
+			</div>
+
+
+		</div>
+
+		<div class="container">
+			
+			{% block body %}{% endblock body %}
+			
+		</div>
+
+		<style>
+			
+			.footer {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 10%;
+				background-color: rgb(110, 218, 191);
+				color: rgb(0, 0, 0);
+				text-align: center;
+				}
+		</style>
+			
+		<div class="footer">
+			<p>copyright © Ecole Première 2019. Tous droits réservés <br><br>
+				Adresse : Quartier Elevage Linguere/Louga &nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Contactez nous au: 77 458 73 86
+			</p>
+		</div>
+
+
+
+
+
+	</div>
+
+	<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.js') }}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='bootstrap/js/jquery.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+	
+</body>
+
+</html>
